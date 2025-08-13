@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* For positioning the chat icon */
+}
+
+.weather-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+}
+
+.weather-emoji {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.weather-location {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.weather-temp {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.weather-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.weather-details {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.error {
+    color: red;
+    font-size: 1rem;
+}
+
+/* Chat Icon */
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+.chat-icon:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Chatbot Modal */
+.chat-modal {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    max-width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chat-body {
+    padding: 10px;
+    height: 250px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 18px;
+    max-width: 80%;
+    word-wrap: break-word;
+    line-height: 1.4; /* Improved readability */
+}
+
+.user-message {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.ai-message {
+    background-color: #e9ecef;
+    color: #333;
+    align-self: flex-start;
+    margin-right: auto;
+    font-size: 0.95rem; /* Slightly smaller for elegance */
+}
+
+.ai-message strong {
+    font-weight: bold;
+}
+
+.ai-message em {
+    font-style: italic;
+}
+
+.ai-message img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 5px;
+    display: block;
+}
+
+.typing-indicator {
+    background-color: #e9ecef;
+    color: #333;
+    align-self: flex-start;
+    margin-right: auto;
+    padding: 8px 12px;
+    border-radius: 18px;
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.typing-indicator::before {
+    content: 'AI is typing...';
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.chat-send {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-send:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .weather-card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .weather-emoji {
+        font-size: 3rem;
+    }
+
+    .weather-location {
+        font-size: 1.2rem;
+    }
+
+    .weather-temp {
+        font-size: 1.5rem;
+    }
+
+    .chat-icon {
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .chat-modal {
+        bottom: 70px;
+        right: 10px;
+        width: 280px;
+    }
+
+    .chat-body {
+        height: 200px;
+    }
+}

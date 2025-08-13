@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App with Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="weather-card">
+        <div id="weather-emoji" class="weather-emoji">🌍</div>
+        <div id="location" class="weather-location">Loading...</div>
+        <div id="temperature" class="weather-temp"></div>
+        <div id="description" class="weather-description"></div>
+        <div id="details" class="weather-details"></div>
+        <div id="error" class="error"></div>
+    </div>
+
+    <!-- Separate Chatbot Icon -->
+    <button class="chat-icon" id="chat-icon">💬</button>
+
+    <!-- Chatbot Modal -->
+    <div class="chat-modal" id="chat-modal">
+        <div class="chat-header">
+            AI Chatbot
+            <button class="chat-close" id="chat-close">&times;</button>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <!-- Messages will be appended here -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" class="chat-input" id="chat-input" placeholder="Type your message...">
+            <button class="chat-send" id="chat-send">➤</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
